@@ -1,0 +1,4 @@
+private ListView<Product> products = new ListView<Product>();
+products.setCellFactory(e -> {ListCell<Product> cell = new ListCell<Product>() {@Override protected void updateItem(Product myObject, boolean b) {super.updateItem(myObject, myObject == null || b);if (myObject != null) {setText(myObject.getName() + " | " + myObject.getPrice()+ " €  | " + myObject.getQuantity());} else {// wichtig da sonst der text stehen bleibt!setText("");}}};return cell;});
+public void bindData(ModelShop model) {	products.setItems(model}
+BindData wird im controller aufgerufen (view.bindData)
